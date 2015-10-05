@@ -1,6 +1,6 @@
 <?php
 
-namespace Pompdelux\KrakenBundle;
+namespace Ivdet\KrakenBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

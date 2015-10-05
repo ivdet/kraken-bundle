@@ -1,6 +1,5 @@
 <?php
 /*
- * This file is part of the hanzo package.
  *
  * (c) Ulrik Nielsen <un@bellcom.dk>
  *
@@ -8,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Pompdelux\KrakenBundle;
+namespace Ivdet\KrakenBundle;
 
 use Guzzle\Http\Message\Response;
 

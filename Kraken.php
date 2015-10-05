@@ -1,14 +1,13 @@
 <?php
 /*
- * This file is part of the hanzo package.
  *
- * (c) Ulrik Nielsen <un@bellcom.dk>
+ * (c) Natalia Plawska <ivdet386@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Pompdelux\KrakenBundle;
+namespace Ivdet\KrakenBundle;
 
 use Guzzle\Service\Client;
 use Psr\Log\LoggerInterface;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Pompdelux\KrakenBundle\DependencyInjection;
+namespace Ivdet\KrakenBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

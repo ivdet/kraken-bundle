@@ -11,12 +11,12 @@ This bundle allows you to integrate [kraken.io](https://kraken.io/) into your Sy
             // ...
             "require": {
                 // ...
-                "pompdelux/kraken-bundle": "1.x"
+                "ivdet/kraken-bundle": "1.x"
             }
         }
 2. Use Composer to download and install the bundle:
 
-        $ php composer.phar update pompdelux/kraken-bundle
+        $ php composer.phar update ivdet/kraken-bundle
 3. Register the bundle in your application:
 
         // app/AppKernel.php
@@ -27,7 +27,7 @@ This bundle allows you to integrate [kraken.io](https://kraken.io/) into your Sy
             {
                 $bundles = array(
                     // ...
-                    new Pompdelux\KrakenBundle\KrakenBundle()
+                    new Ivdet\KrakenBundle\KrakenBundle()
                 );
             }
         }
@@ -46,7 +46,7 @@ This bundle allows you to integrate [kraken.io](https://kraken.io/) into your Sy
 ### Basic example:
 
 ```php
-$kraken = $this->container->get('pompdelux.kraken.service_name');
+$kraken = $this->container->get('ivdet.kraken.service_name');
 $result = $kraken->squeeze('http://example.com/some/public/image.jpg');
 ```
 
@@ -74,7 +74,7 @@ acme_kraken_callback:
 
 ```php
 
-$kraken = $this->container->get('pompdelux.kraken.callback_service');
+$kraken = $this->container->get('ivdet.kraken.callback_service');
 $result = $kraken->squeeze('http://example.com/some/public/image.jpg');
 
 // In AcmeTestBundle/Controller/KrakenController.php

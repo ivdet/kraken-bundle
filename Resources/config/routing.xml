@@ -4,10 +4,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="pompdelux_kraken_callback" pattern="/pompdelux/kraken/callback/">
+    <route id="ivdet_kraken_callback" pattern="/ivdet/kraken/callback/">
         <default key="_controller">KrakenBundle:Default:callback</default>
     </route>
-    <route id="pompdelux_kraken_test" pattern="/pompdelux/kraken/test/">
+    <route id="ivdet_kraken_test" pattern="/ivdet/kraken/test/">
         <default key="_controller">KrakenBundle:Default:test</default>
     </route>
 </routes>

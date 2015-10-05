@@ -1,6 +1,6 @@
 <?php
 
-namespace Pompdelux\KrakenBundle\DependencyInjection;
+namespace Ivdet\KrakenBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -34,10 +34,10 @@ class KrakenExtension extends Extension
                 throw new \ConfigurationException('The "upload" type is currently disabled due to PHP 5.5 cURL issues.');
             }
 
-            $def = new Definition($container->getParameter('pompdelux.kraken.service.class'));
+            $def = new Definition($container->getParameter('ivdet.kraken.service.class'));
             $def->setPublic(true);
             $def->setScope(ContainerInterface::SCOPE_CONTAINER);
-            $def->addArgument(new Reference('pompdelux.kraken.guzzle.'.$settings['type'].'.service'));
+            $def->addArgument(new Reference('ivdet.kraken.guzzle.'.$settings['type'].'.service'));
             $def->addArgument(new Reference('logger'));
             $def->addArgument(new Reference('router'));
             $def->addArgument($settings['api_key']);
@@ -48,7 +48,7 @@ class KrakenExtension extends Extension
             $callback = $settings['callback'] ? $settings['callback_route'] : null;
             $def->addArgument($callback);
 
-            $container->setDefinition(sprintf('pompdelux.kraken.%s', $name), $def);
+            $container->setDefinition(sprintf('ivdet.kraken.%s', $name), $def);
         }
     }
 }
