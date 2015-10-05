@@ -77,6 +77,28 @@ class Kraken
 
 
     /**
+     * @param $from : an Absolute link to an image to be optimized
+     * @param $to: a Relative link to write the result image
+     * @return bool	 
+     */
+    public function reWrite ($from, $to)
+    {
+		try{			
+			$res = $this->send($from);
+			
+			$ch = curl_init($res);			
+			$fp = fopen($to, 'wb');
+			curl_setopt($ch, CURLOPT_FILE, $fp);
+			curl_setopt($ch, CURLOPT_HEADER, 0);
+			curl_exec($ch);
+			curl_close($ch);
+			fclose($fp);
+		}
+		catch(Exception $e) { return false; }
+		return true;
+    }
+	
+    /**
      * @param $image
      * @return KrakenResponse
      */
