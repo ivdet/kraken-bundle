@@ -81,11 +81,11 @@ class Kraken
      * @param $to: a Relative link to write the result image
      * @return bool	 
      */
-    public function reWrite ($from, $to)
+    public function squeezeRewrite ($from, $to)
     {
 		try{			
 			$res = $this->send($from);
-			
+			$this->logger->debug('Writing the responce to ' . $to);
 			$ch = curl_init($res);			
 			$fp = fopen($to, 'wb');
 			curl_setopt($ch, CURLOPT_FILE, $fp);
