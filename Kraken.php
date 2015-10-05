@@ -75,29 +75,29 @@ class Kraken
         $this->callback_route = $callback_route;
     }
 
-
-    /**
+	    /**
      * @param $from : an Absolute link to an image to be optimized
      * @param $to: a Relative link to write the result image
      * @return bool	 
      */
-    public function squeezeRewrite ($from, $to)
+    public function squeezeAndRewrite($from, $to)
     {
 		try{			
 			$res = $this->send($from);
-			$this->logger->debug('Writing the responce to ' . $to);
-			$ch = curl_init($res);			
-			$fp = fopen($to, 'wb');
+			$this->logger->debug('Writing the response to ' . $to);
+			$res = $res->getResponse();
+			$ch = curl_init($res['kraked_url']);	
+			$fp = (file_exists($to))? fopen($to, "a+") : fopen($to, "w+");
 			curl_setopt($ch, CURLOPT_FILE, $fp);
 			curl_setopt($ch, CURLOPT_HEADER, 0);
 			curl_exec($ch);
 			curl_close($ch);
 			fclose($fp);
+			chmod($to, 0777);
 		}
 		catch(Exception $e) { return false; }
 		return true;
     }
-	
     /**
      * @param $image
      * @return KrakenResponse
